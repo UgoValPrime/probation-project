@@ -1,0 +1,15 @@
+{
+    "admin": [{
+        "id": 1,
+        "admin_id": "ugoval",
+        "password": "nemesis"
+    }],
+    "Animals": [{
+        "name": "great white sahrk",
+        "kingdom": "animalia",
+        "class": "fishes",
+        "order": "carn",
+        "url": "",
+        "id": 4
+    }]
+}
