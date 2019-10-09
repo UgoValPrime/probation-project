@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h1> UPDATE ANIMAL DETAILS</h1>
+        </center>
+    </div>
+    <div class="container">
+
+        <div style="width: 200px;">
+            <form id="updateAnimal">
+                <div class="form-group"><label>name:</label><input type="text" placeholder="name" id="name" class="form-control">
+                </div>
+                <div class="form-group"><label>kingdom:</label><input type="text" placeholder="kingdom" id="kingdom" class="form-control"></div>
+                <div class="form-group"><label>class:</label><input type="text" placeholder="class" id="class" class="form-control"></div>
+                <div class="form-group"><label>order:</label><input type="text" placeholder="order" id="order" class="form-control"></div>
+                <div class="form-group"><label>image_url:</label><input type="text" placeholder="image_url" id="image" class="form-control"></div>
+
+                <button type="submit" class="btn btn-dark">update</button>
+            </form>
+        </div>
+
+    </div>
+    <script src="../jquery2.js"></script>
+    <script>
+        $(document).ready(function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            let id = urlParams.get('id');
+            console.log(id)
+            $.ajax({
+                url: `http://localhost:3000/Animals/${id}`,
+                type: "GET",
+                success: function(res) {
+                    console.log(window.location.search)
+                    $("#name").val(res.name)
+                    $("#kingdom").val(res.kingdom)
+                    $("#class").val(res.class)
+                    $("#order").val(res.order)
+                    $("#image").val(res.image)
+                }
+            })
+
+
+            $("#updateAnimal").on("submit", function(e) {
+                e.preventDefault();
+                let data = {
+                    name: $("#name").val(),
+                    kingdom: $("#kingdom").val(),
+                    class: $("#class").val(),
+                    order: $("#order").val(),
+                    url: $("#image").val()
+
+                }
+                $.ajax({
+                    url: `http://localhost:3000/Animals/${id}`,
+                    success: function(result) {
+                        alert('update successful');
+                    },
+                    type: "PUT",
+                    data: data
+                })
+            })
+
+        })
+    </script>
+</body>
+
+</html>

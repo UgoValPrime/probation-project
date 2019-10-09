@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/public/index.html">Animal Species Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/amphibians.html">Amphibians</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/birds.html">Birds</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/mammals.html">Mammals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/fish.html">Fish</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/reptile.html">Reptiles</a>
+                </li>
+        </div>
+    </nav>
+    <div class="container mt-4">
+        <div>
+            <h1>Animal List</h1>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Animal Name</th>
+                        <th scope="col">Animal Class</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="animalia">
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <script src="../jquery2.js"></script>
+    <script src="../js/bootstrap.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "http://localhost:3000/Animals",
+                success: function(result) {
+                    let amphiArr = result.filter(fin => fin.kingdom == "animalia");
+                    let final = amphiArr.map(current => {
+                        return `<tr>
+                                    <td>${current.name}</td>
+                                    <td>${current.class}</td>
+                                    <td><button onclick="deleteAnimal(${current.id});" class="btn btn-light">delete</button> <a class="btn btn-dark" href="/html/update-animal.html?id=${current.id}">Update</a></td>
+                                </tr>`
+                    })
+                    $("#animalia").html(final)
+
+
+                },
+                type: "GET",
+            });
+
+        })
+    </script>
+
+
+    <script>
+        function deleteAnimal(id) {
+            alert(id)
+            $.ajax({
+                url: "http://localhost:3000/animals/" + id,
+                method: "delete"
+            }).done(resp => {
+                console.log(resp);
+            })
+
+        }
+    </script>
+</body>
+
+</html>

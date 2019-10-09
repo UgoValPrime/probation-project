@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mammals | Home</title>
+    <link rel="stylesheet" href="../mammals.css">
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h1 class="display-3">
+                MAMMALS
+            </h1>
+        </center>
+    </div>
+    <div class="container">
+        <center>
+            <h3 class="h6" style="margin-bottom: 30px">Did you know that over 5000 species of Mammals are known to man?? Quite alot right?? oh thats not all!!! There's still alot more being discovered every other month
+            </h3>
+        </center>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/public/index.html">Animal Species Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto" style="margin-top: 15px">
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/admin_login.html">Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/amphibians.html">Amphibians</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/birds.html">Birds</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/mammals.html">Mammals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/fish.html">Fish</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/reptile.html">Reptiles</a>
+                </li>
+        </div>
+    </nav>
+    <div class="container">
+
+    </div>
+    <div class="container" style="margin-top: 30px;">
+        <center>
+            <h4 class="h4"> Well here's a list of those on display at DECADEV</h4>
+        </center>
+    </div>
+    <div>
+        <ul id="mammals">
+
+        </ul>
+    </div>
+</body>
+<script src="../jquery2.js"></script>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "http://localhost:3000/Animals",
+            success: function(result) {
+                let mamArr = result.filter(anim => anim.class == "mammalia");
+                let final = mamArr.map(current => {
+                    return `<li><a href="/html/animal-profile.html?id=${current.id}">${current.name}</a></li>`
+                })
+                $("#mammals").html(final)
+            },
+            type: "GET",
+        })
+    })
+</script>
+
+</html>

@@ -8,11 +8,12 @@
     <title>Document</title>
 </head>
 <link rel="stylesheet" href="/public/css/bootstrap.css">
+<link rel="stylesheet" href="/public/css/carousel.css">
 
 <body>
     <div class="container">
         <center>
-            <h1 class="display-2">DecaDev Animal Species Display Sysytem</h1>
+            <h1 class="display-2">DecaDev Animal Species Display System</h1>
         </center>
     </div>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -48,50 +49,69 @@
                 </li>
         </div>
     </nav>
-    <div class="bd-example">
-        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-            <ol class="carousel-indicators">
-                <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-                <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-            </ol>
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="..." class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>First slide label</h5>
-                        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Second slide label</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
-                    <div class="carousel-caption d-none d-md-block">
-                        <h5>Third slide label</h5>
-                        <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-sm-6 my-4">
+                <div class="card" style="width: 18rem; background-color: rgb(138, 136, 136)">
+                    <img src="./photos/frog.jpg" class="card-img-top img-responsive" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">AMPHIBIANS</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                        <a href="/html/amphibians.html" class="btn btn-dark">Learn more</a>
                     </div>
                 </div>
             </div>
-            <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
+            <div class="col-md-4 col-sm-6 my-4">
+                <div class="card" style="width: 18rem; background-color: rgb(138, 136, 136)">
+                    <img src="./photos/golden.jpg" class="card-img-top img-responsive" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">BIRDS</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                        <a href="/html/birds.html" class="btn btn-dark">Learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 my-4">
+                <div class="card" style="width: 18rem; background-color: rgb(138, 136, 136)">
+                    <img src="./photos/shark.jpg" class="card-img-top img-responsive" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">FISHES</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                        <a href="/html/fish.html" class="btn btn-dark">Learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 my-4">
+                <div class="card" style="width: 18rem; background-color: rgb(138, 136, 136)">
+                    <img src="./photos/Gorillas-Micato5.jpg" class="card-img-top img-responsive" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">MAMMALS</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                        <a href="/html/mammals.html" class="btn btn-dark">Learn more</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 col-sm-6 my-4">
+                <div class="card" style="width: 18rem; background-color: rgb(138, 136, 136)">
+                    <img src="./photos/hd-chameleon-wallpaper.jpg" class="card-img-top img-responsive" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">REPTILES</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.
+                        </p>
+                        <a href="/html/reptile.html" class="btn btn-dark">Learn more</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
+
+    <script src="/public/js/bootstrap.js"></script>
     <script src="/public/jquery2.js"></script>
-    <script>
-        $('.carousel').carousel()
-    </script>
+
 </body>
 
 </html>

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+    <link rel="stylesheet" href="../fish.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <center>
+            <h1 class="display-3">
+                FISH
+            </h1>
+        </center>
+    </div>
+    <div class="container">
+
+    </div>
+    <div class="container">
+        <center>
+            <h3 class="h6" style="margin-bottom: 30px">Fish are vertebrate animals that live in the water. ... Fish have gills that extract oxygen from the water around them. There are over 30000 known species of fish.
+            </h3>
+        </center>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/public/index.html">Animal Species Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/admin_login.html">Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/amphibians.html">Amphibians</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/birds.html">Birds</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/mammals.html">Mammals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/fish.html">Fish</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/reptile.html">Reptiles</a>
+                </li>
+        </div>
+    </nav>
+    <div class="container">
+        <center>
+            <h4 class="h4" style="margin-top: 30px"> These are on display at DECADEV</h4>
+        </center>
+    </div>
+
+    <div>
+        <ul id="fish">
+
+        </ul>
+    </div>
+</body>
+<script src="../jquery2.js"></script>
+<script>
+    $(document).ready(function() {
+        $.ajax({
+            url: "http://localhost:3000/Animals",
+            success: function(result) {
+                let fishArr = result.filter(fin => fin.class == "fish");
+                let final = fishArr.map(current => {
+                    return `<li><a href="/html/animal-profile.html?id=${current.id}">${current.name}</a></li>`
+                })
+                $("#fish").html(final)
+            },
+            type: "GET",
+        })
+    })
+</script>
+
+
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../style3.css">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <style>
+        /*body {
+            background-image: url(C:\Users\user\Documents\Animal-species-display-system\photos\serengeti.jpg)
+        }*/
+        
+        #Header {
+            width: 100%;
+            height: 120px;
+            background-color: rgba(1, 10, 15, 0.404);
+            color: azure;
+        }
+        
+        .container {
+            max-width: 400px;
+        }
+        
+        #Sidebar {
+            margin-top: 70px;
+        }
+        
+        ul li {
+            border-bottom: 1px solid black;
+            font-size: 25px
+        }
+        
+        ul li:hover {
+            background: rgb(0, 0, 29);
+            color: azure;
+        }
+        
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="Header">
+        <center> <img src="/photos/admin_logo.png" alt="admin_logo" style="width:100px"></center>
+    </div>
+    <div class="container">
+
+        <div id="Sidebar">
+            <ul class="list-group mx-auto  center">
+                <li class="list-group-item d-flex justify-content-between align-items-center"><a href="/public/html/add_animal.html" class="active">Add Animal</a> </li>
+                <!-- <li class="list-group-item d-flex justify-content-between align-items-center"> <a href="/html/update-animal.html">Update Animal</a></li>-->
+
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="/public/html/admin-view.html">View Animals</a> </li>
+                <!-- <li class="list-group-item d-flex justify-content-between align-items-center">
+                    <a href="/html/create_admin.html">Add admin</a>
+                </li>-->
+            </ul>
+        </div>
+    </div>
+
+    <div id="Data">
+    </div>
+    <script src="../jquery2.js"></script>
+</body>
+
+</html>

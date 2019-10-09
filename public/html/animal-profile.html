@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>profile</title>
+</head>
+
+<body>
+    <div class="container mt-4">
+        <h1 id="name"></h1>
+        <h4 id="kingdom"></h4>
+        <p id="class"></p>
+        <p id="order"></p>
+        <p id="image"></p>
+    </div>
+    <script src="../jquery2.js"></script>
+    <script>
+        $(document).ready(function() {
+            let url = new URLSearchParams(window.location.search);
+            let id = url.get('id');
+            console.log(id)
+            $.ajax({
+                url: `http://localhost:3000/Animals/${id}`,
+                method: "GET",
+                success: function(response) {
+                    console.log(response.name)
+                    $("#name").html(response.name);
+                    $("#kingdom").text(response.kingdom);
+                    $("#class").text(response.class);
+                    $("#order").text(response.order);
+                    $("#image").text(response.image_url);
+                }
+            })
+
+        })
+    </script>
+</body>
+
+</html>

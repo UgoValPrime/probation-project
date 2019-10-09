@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../amphibians.css">
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="container">
+        <center>
+            <h1 class="display-3">
+                AMPHIBIANS
+            </h1>
+        </center>
+    </div>
+    <div class="container">
+
+    </div>
+    <div class="container">
+        <center>
+            <h3 class="h6" style="margin-bottom: 30px"> FUN FACT ABOUT THIS SPECIES; they have the ability to live in more than one natural habitat... They are quite at home in the water as they are on land. They all lay eggs
+            </h3>
+        </center>
+    </div>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="/public/index.html">Animal Species Home</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/admin_login.html">Admin</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/amphibians.html">Amphibians</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/birds.html">Birds</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/mammals.html">Mammals</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/fish.html">Fish</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="/public/html/reptile.html">Reptiles</a>
+                </li>
+        </div>
+    </nav>
+    <div class="container">
+        <center>
+            <h4 class="h4" style="margin-top: 30px"> Well here's what we have on display at DECADEV</h4>
+        </center>
+    </div>
+
+    <div class="container">
+        <center>
+            <ul id="amphibian">
+
+            </ul>
+        </center>
+    </div>
+    <script src="../jquery2.js"></script>
+    <script>
+        $(document).ready(function() {
+            $.ajax({
+                url: "http://localhost:3000/Animals",
+                success: function(result) {
+                    let amphiArr = result.filter(fin => fin.class == "amphibian");
+                    let final = amphiArr.map(current => {
+                        return `<li><a href="/html/animal-profile.html?id=${current.id}">${current.name}</a></li>`
+                    })
+                    $("#amphibian").html(final)
+                },
+                type: "GET",
+            })
+        })
+    </script>
+</body>
+
+</html>

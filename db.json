@@ -5,10 +5,10 @@
         "password": "nemesis"
     }],
     "Animals": [{
-        "name": "great white sahrk",
+        "name": "great white shark",
         "kingdom": "animalia",
-        "class": "fishes",
-        "order": "carn",
+        "class": "fish",
+        "order": "carnivore",
         "url": "",
         "id": 4
     }]
