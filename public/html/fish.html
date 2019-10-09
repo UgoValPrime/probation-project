@@ -78,7 +78,7 @@
             success: function(result) {
                 let fishArr = result.filter(fin => fin.class == "fish");
                 let final = fishArr.map(current => {
-                    return `<li><a href="/html/animal-profile.html?id=${current.id}">${current.name}</a></li>`
+                    return `<li><a href="/public/html/animal-profile.html?id=${current.id}">${current.name}</a></li>`
                 })
                 $("#fish").html(final)
             },

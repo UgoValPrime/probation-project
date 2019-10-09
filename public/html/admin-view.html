@@ -66,7 +66,7 @@
                         return `<tr>
                                     <td>${current.name}</td>
                                     <td>${current.class}</td>
-                                    <td><button onclick="deleteAnimal(${current.id});" class="btn btn-light">delete</button> <a class="btn btn-dark" href="/html/update-animal.html?id=${current.id}">Update</a></td>
+                                    <td><button onclick="deleteAnimal(${current.id});" class="btn btn-light">delete</button> <a class="btn btn-dark" href="/public/html/update-animal.html?id=${current.id}">Update</a></td>
                                 </tr>`
                     })
                     $("#animalia").html(final)

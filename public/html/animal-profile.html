@@ -15,6 +15,7 @@
         <p id="class"></p>
         <p id="order"></p>
         <p id="image"></p>
+        <p id="description" class="lead"></p>
     </div>
     <script src="../jquery2.js"></script>
     <script>
@@ -32,6 +33,7 @@
                     $("#class").text(response.class);
                     $("#order").text(response.order);
                     $("#image").text(response.image_url);
+                    $("#description").text(response.description);
                 }
             })
 

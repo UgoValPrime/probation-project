@@ -76,7 +76,7 @@
             success: function(result) {
                 let mamArr = result.filter(anim => anim.class == "mammalia");
                 let final = mamArr.map(current => {
-                    return `<li><a href="/html/animal-profile.html?id=${current.id}">${current.name}</a></li>`
+                    return `<li><a href="/public/html/animal-profile.html?id=${current.id}">${current.name}</a></li>`
                 })
                 $("#mammals").html(final)
             },

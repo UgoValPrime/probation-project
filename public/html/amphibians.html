@@ -78,7 +78,7 @@
                 success: function(result) {
                     let amphiArr = result.filter(fin => fin.class == "amphibian");
                     let final = amphiArr.map(current => {
-                        return `<li><a href="/html/animal-profile.html?id=${current.id}">${current.name}</a></li>`
+                        return `<li><a href="/public/html/animal-profile.html?id=${current.id}">${current.name}</a></li>`
                     })
                     $("#amphibian").html(final)
                 },
