@@ -6,17 +6,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>profile</title>
+    <link rel="stylesheet" href="/public/css/bootstrap.css">
 </head>
 
 <body>
-    <div class="container mt-4">
-        <h1 id="name"></h1>
-        <h4 id="kingdom"></h4>
-        <p id="class"></p>
-        <p id="order"></p>
-        <p id="image"></p>
-        <p id="description" class="lead"></p>
-    </div>
+    <center>
+        <div class="container mt-4" style="background-color:black;color:white;padding:20px;">
+            <h1 id="name" class="display-1"><strong></strong></h1>
+            <h3 id="kingdom" class="display-3"></h3>
+            <h4 id="class"></h4>
+            <p id="order" class="h6"></p>
+            <p id="image"></p>
+            <p id="description" class="lead"></p>
+        </div>
+    </center>
     <script src="../jquery2.js"></script>
     <script>
         $(document).ready(function() {
